@@ -32,8 +32,8 @@ SmartCommit is a CLI tool that generates clean, conventional commit messages bas
 ### 2. Clone this repo
 
 ```bash
-git clone https://github.com/your-username/smartcommit.git
-cd smartcommit
+git clone https://github.com/Trigo93/commit_msg_llm.git
+cd commit_msg_llm
 ```
 
 ---
@@ -41,12 +41,13 @@ cd smartcommit
 ## 🧪 Usage
 
 ```bash
-python smartcommit.py --jira ABC-123
+python3 commait.py --jira ABC-123
 ```
 
 ### Optional Flags:
 
 * `--jira <TICKET>`: Prefix message with a JIRA ID (e.g., `[BUGFIX ABC-123]`)
+* `--h` : Display helper
 
 ---
 
@@ -64,8 +65,6 @@ python smartcommit.py --jira ABC-123
 ## 🛠 Developer Notes
 
 To skip auto-committing, you can comment out the final `git commit` line in `main()`.
-
-You can also adapt this script into a Git hook (e.g. `prepare-commit-msg`).
 
 ---
 

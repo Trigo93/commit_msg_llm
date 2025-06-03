@@ -11,8 +11,9 @@ SmartCommit is a CLI tool that generates clean, conventional commit messages bas
 * 🧠 Uses recent high-quality commits as in-context examples
 * 🔒 Works entirely offline with Ollama
 * 🧹 Enforces conventional, imperative-style commit formatting
-* 🛠 Auto-stages changes and launches `git commit --edit`
-* 🐍 Lightweight Python script
+- 🛠 Auto-stages changes and launches `git commit --edit`
+- ⚡ Fast and lightweight CLI tool, written in Python
+- 🧪 Optional `--jira` and `--debug` flags
 
 ---
 
@@ -34,6 +35,7 @@ SmartCommit is a CLI tool that generates clean, conventional commit messages bas
 ```bash
 git clone https://github.com/Trigo93/commit_msg_llm.git
 cd commit_msg_llm
+pip3 install .
 ```
 
 ---
@@ -41,12 +43,13 @@ cd commit_msg_llm
 ## 🧪 Usage
 
 ```bash
-python3 commait.py --jira ABC-123
+commait --jira ABC-123
 ```
 
 ### Optional Flags:
 
 * `--jira <TICKET>`: Prefix message with a JIRA ID (e.g., `[BUGFIX ABC-123]`)
+* `-d, --debug`: Enable debug mode (shows full prompt sent to the model)
 * `--h` : Display helper
 
 ---
@@ -54,11 +57,13 @@ python3 commait.py --jira ABC-123
 ## 💡 How It Works
 
 1. Starts Ollama server and loads the LLaMA 3 model (if not already running)
-2. Stages all current changes
-3. Collects recent & random good commits from history
-4. Builds a prompt using the Git diff + examples
-5. Sends to Ollama API
-6. Writes generated message to `.git/COMMIT_EDITMSG` and opens commit editor
+2. Loads the llama3 model locally
+3. Stages all current changes
+4. Retrieves high-quality past commits for context
+5. Builds a prompt using the Git diff + examples
+6. Sends to Ollama API
+7. Writes generated message to `.git/COMMIT_EDITMSG` and opens commit editor
+8. Launches the Git editor for review and editing
 
 ---
 

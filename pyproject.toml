@@ -1,0 +1,13 @@
+[project]
+name = "commait"
+version = "0.1.0"
+description = "Generate Git commit messages using Ollama and LLMs"
+authors = [{ name = "Your Name", email = "t.mallet93@gmail.com" }]
+dependencies = ["requests"]
+
+[project.scripts]
+commait = "commait.cli:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

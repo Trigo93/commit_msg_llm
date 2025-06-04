@@ -2,7 +2,7 @@
 
 > ✨ AI-powered Git commit messages using LLaMA 3, locally via Ollama
 
-SmartCommit is a CLI tool that generates clean, conventional commit messages based on your Git diff — powered by a local LLM (LLaMA 3). No cloud, no tokens, just smart, secure commit messages.
+CommAIt is a CLI tool that generates clean, conventional commit messages based on your Git diff — powered by a local LLM (LLaMA 3). No cloud, no tokens, just smart, secure commit messages.
 
 ---
 
